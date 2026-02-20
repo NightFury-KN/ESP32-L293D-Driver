@@ -1,0 +1,18 @@
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+ESP32_MotorShield	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+begin	KEYWORD2
+setSpeed	KEYWORD2
+run	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+FORWARD	LITERAL1
+BACKWARD	LITERAL1
+RELEASE	LITERAL1

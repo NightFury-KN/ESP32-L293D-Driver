@@ -62,3 +62,23 @@ void loop() {
   shield.run(1, RELEASE);
   delay(2000);
 }
+
+## API Reference
+
+### `ESP32_MotorShield(clk, en, data, latch, pwm1, pwm2, pwm3, pwm4)`
+**Constructor:** Initializes the library with your custom GPIO pin mapping. 
+* `clk`, `en`, `data`, `latch`: ESP32 pins connected to the 74HC595 shift register.
+* `pwm1` - `pwm4`: ESP32 pins connected to the L293D Enable (Speed) pins.
+
+### `void begin()`
+**Initialization:** Configures all defined pins as `OUTPUT`, initializes the ESP32's native PWM channels, and sets all motor states to `RELEASE`. Call this once in `setup()`.
+
+### `void setSpeed(uint8_t motorNum, uint8_t speed)`
+**Speed Control:** Adjusts the PWM duty cycle for a specific motor.
+* `motorNum`: Integer `1`, `2`, `3`, or `4`.
+* `speed`: 8-bit integer from `0` (stopped) to `255` (maximum voltage).
+
+### `void run(uint8_t motorNum, uint8_t command)`
+**Direction Control:** Updates the shift register to change the H-bridge polarity.
+* `motorNum`: Integer `1`, `2`, `3`, or `4`.
+* `command`: Use predefined constants `FORWARD`, `BACKWARD`, or `RELEASE`.
